@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python scripts\prepare_data.py
+    deps:
+    - path: data\raw\datos_creditos.csv
+      hash: md5
+      md5: 3b26edd22e8827f890d7cd32efe475b7
+      size: 663047
+    - path: data\raw\datos_tarjetas.csv
+      hash: md5
+      md5: 9e197c893925601cd447c81256e8cf07
+      size: 845190
+    - path: scripts\prepare_data.py
+      hash: md5
+      md5: a940ce185e370a037c02c42d7e339384
+      size: 4921
+    outs:
+    - path: data\processed\datos_integrados.csv
+      hash: md5
+      md5: 4d8b6c5b3622f2c75cad247760c2825a
+      size: 1256495
+    - path: reports\prepare_data_summary.json
+      hash: md5
+      md5: cdf3f07ee308b632af22d00100898776
+      size: 656
