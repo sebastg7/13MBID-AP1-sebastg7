@@ -1,0 +1,17 @@
+jupyter 
+notebook 
+pandas 
+numpy 
+scikit-learn 
+mlflow 
+dvc 
+ydata_profiling 
+streamlit 
+streamlit-ace 
+pytest 
+pytest-html 
+pandera 
+great_expectations 
+fastapi 
+uvicorn 
+plotly 
