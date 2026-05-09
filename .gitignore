@@ -161,3 +161,9 @@ cython_debug/
 
 mlruns
 data/raw/*.csv
+
+mlflow.db
+
+mlruns/
+
+mlartifacts/
