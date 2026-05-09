@@ -4,7 +4,7 @@ import requests
 import streamlit as st
 
 
-API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
+API_URL = os.getenv("API_URL", "https://one3mbid-api-prediccion-mora.onrender.com")
 
 
 st.set_page_config(
