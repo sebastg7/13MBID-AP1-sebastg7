@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
-MODEL_PATH = ROOT_DIR / "models" / "modelo_final.joblib"
+MODEL_PATH = ROOT_DIR / "app" / "artifacts" / "modelo_final.joblib"
 
 app = FastAPI(
     title="API de predicción de mora crediticia",

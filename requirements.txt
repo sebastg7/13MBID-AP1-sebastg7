@@ -1,0 +1,11 @@
+﻿fastapi
+uvicorn
+streamlit
+requests
+pandas
+scikit-learn
+joblib
+pydantic
+mlflow
+pytest
+dvc
