@@ -24,3 +24,44 @@ stages:
       hash: md5
       md5: cdf3f07ee308b632af22d00100898776
       size: 656
+  train_model:
+    cmd: python scripts\train_model.py
+    deps:
+    - path: data\processed\datos_integrados.csv
+      hash: md5
+      md5: 4d8b6c5b3622f2c75cad247760c2825a
+      size: 1256495
+    - path: scripts\train_model.py
+      hash: md5
+      md5: 34ecb890cd999f8e6fdb957507e825cd
+      size: 6989
+    outs:
+    - path: models\modelo_final.joblib
+      hash: md5
+      md5: ad5ad751968b29775d2f370260b951cd
+      size: 6778
+  evaluate_model:
+    cmd: python -m pytest -q tests\test_model_performance.py 
+      --junitxml=reports\pytest_model_performance.xml
+    deps:
+    - path: data\processed\datos_integrados.csv
+      hash: md5
+      md5: 4d8b6c5b3622f2c75cad247760c2825a
+      size: 1256495
+    - path: models\modelo_final.joblib
+      hash: md5
+      md5: ad5ad751968b29775d2f370260b951cd
+      size: 6778
+    - path: reports\model_final_report.json
+      hash: md5
+      md5: c9ecf376b52f103cb6402d2312233fc6
+      size: 1109
+    - path: tests\test_model_performance.py
+      hash: md5
+      md5: 9e233516f0d20ed5d5bf6f3d54a5d4e8
+      size: 1423
+    outs:
+    - path: reports\pytest_model_performance.xml
+      hash: md5
+      md5: 2fcf854461f454278175eb4bd0354512
+      size: 767

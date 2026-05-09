@@ -8,3 +8,20 @@ stages:
     outs:
     - data\processed\datos_integrados.csv
     - reports\prepare_data_summary.json
+  train_model:
+    cmd: python scripts\train_model.py
+    deps:
+    - data\processed\datos_integrados.csv
+    - scripts\train_model.py
+    outs:
+    - models\modelo_final.joblib
+  evaluate_model:
+    cmd: python -m pytest -q tests\test_model_performance.py 
+      --junitxml=reports\pytest_model_performance.xml
+    deps:
+    - data\processed\datos_integrados.csv
+    - models\modelo_final.joblib
+    - reports\model_final_report.json
+    - tests\test_model_performance.py
+    outs:
+    - reports\pytest_model_performance.xml
